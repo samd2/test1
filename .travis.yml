@@ -37,3 +37,27 @@ matrix:
         - grep ^ /etc/apt/sources.list /etc/apt/sources.list.d/*
       script:
         - env
+    - os: linux
+      dist: bionic
+      addons:
+        apt:
+          packages:
+            - tree
+      install:
+        - dpkg -l > test.txt
+        - cat test.txt
+        - grep ^ /etc/apt/sources.list /etc/apt/sources.list.d/*
+      script:
+        - env
+    - os: linux
+      dist: focal
+      addons:
+        apt:
+          packages:
+            - tree
+      install:
+        - dpkg -l > test.txt
+        - cat test.txt
+        - grep ^ /etc/apt/sources.list /etc/apt/sources.list.d/*
+      script:
+        - env
