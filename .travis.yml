@@ -1,0 +1,39 @@
+#
+# Copyright (c) 2013-2017 Vinnie Falco (vinnie dot falco at gmail dot com)
+#
+# Distributed under the Boost Software License, Version 1.0. (See accompanying
+# file LICENSE_1_0.txt or copy at http://www.boost.org/LICENSE_1_0.txt)
+#
+# Official repository: https://github.com/boostorg/beast
+#
+
+language: cpp
+
+addons:
+  apt:
+    sources:
+      - ubuntu-toolchain-r-test
+    packages:
+      #- python-software-properties
+      - software-properties-common
+      - libffi-dev
+      #- libstdc++6
+      - binutils-gold
+      # Provides a backtrace if the unittests crash
+      - gdb
+
+matrix:
+  include:
+    # Documentation build
+    - os: linux
+      dist: xenial
+      addons:
+        apt:
+          packages:
+            - tree
+      install:
+        - dpkg -l > test.txt
+        - cat test.txt
+        - grep ^ /etc/apt/sources.list /etc/apt/sources.list.d/*
+      script:
+        - env
