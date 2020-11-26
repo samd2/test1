@@ -35,6 +35,11 @@ matrix:
         - dpkg -l > test.txt
         - cat test.txt
         - grep ^ /etc/apt/sources.list /etc/apt/sources.list.d/*
+        - ls -al /usr/bin/c*
+        - echo checking-clang++
+        - /usr/bin/clang++ --version || true
+        - echo checking-clang++-libc++
+        - /usr/bin/clang++-libc++ --version || true
       script:
         - env
     - os: linux
@@ -47,6 +52,11 @@ matrix:
         - dpkg -l > test.txt
         - cat test.txt
         - grep ^ /etc/apt/sources.list /etc/apt/sources.list.d/*
+        - ls -al /usr/bin/c*
+        - echo checking-clang++
+        - /usr/bin/clang++ --version || true
+        - echo checking-clang++-libc++
+        - /usr/bin/clang++-libc++ --version || true
       script:
         - env
     - os: linux
@@ -59,5 +69,10 @@ matrix:
         - dpkg -l > test.txt
         - cat test.txt
         - grep ^ /etc/apt/sources.list /etc/apt/sources.list.d/*
+        - ls -al /usr/bin/c*
+        - echo checking-clang++
+        - /usr/bin/clang++ --version || true
+        - echo checking-clang++-libc++
+        - /usr/bin/clang++-libc++ --version || true
       script:
         - env
