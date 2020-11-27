@@ -37,9 +37,15 @@ matrix:
         - grep ^ /etc/apt/sources.list /etc/apt/sources.list.d/*
         - ls -al /usr/bin/c*
         - echo checking-clang++
+        - which clang++ || true
         - /usr/bin/clang++ --version || true
         - echo checking-clang++-libc++
+        - which clang++-libc++ || true
         - /usr/bin/clang++-libc++ --version || true
+        - echo checking /usr/local/clang-7.0.0/bin
+        - ls -al /usr/local/clang-7.0.0/bin
+        - echo checking c++
+        - /usr/bin/c++ --version || true
       script:
         - env
     - os: linux
@@ -54,9 +60,15 @@ matrix:
         - grep ^ /etc/apt/sources.list /etc/apt/sources.list.d/*
         - ls -al /usr/bin/c*
         - echo checking-clang++
+        - which clang++ || true
         - /usr/bin/clang++ --version || true
         - echo checking-clang++-libc++
+        - which clang++-libc++ || true
         - /usr/bin/clang++-libc++ --version || true
+        - echo checking /usr/local/clang-7.0.0/bin
+        - ls -al /usr/local/clang-7.0.0/bin
+        - echo checking c++
+        - /usr/bin/c++ --version || true
       script:
         - env
     - os: linux
@@ -71,8 +83,14 @@ matrix:
         - grep ^ /etc/apt/sources.list /etc/apt/sources.list.d/*
         - ls -al /usr/bin/c*
         - echo checking-clang++
+        - which clang++ || true
         - /usr/bin/clang++ --version || true
         - echo checking-clang++-libc++
+        - which clang++-libc++ || true
         - /usr/bin/clang++-libc++ --version || true
+        - echo checking /usr/local/clang-7.0.0/bin
+        - ls -al /usr/local/clang-7.0.0/bin
+        - echo checking c++
+        - /usr/bin/c++ --version || true
       script:
         - env
