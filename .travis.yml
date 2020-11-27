@@ -46,6 +46,14 @@ matrix:
         - ls -al /usr/local/clang-7.0.0/bin
         - echo checking c++
         - /usr/bin/c++ --version || true
+        - apt-get install -y mlocate apt-file
+        - updatedb
+        - locate clang++-libc++ || true
+        - apt-file update
+        - apt-file search clang++-libc++ || true
+        - which clang++-libc++ || true
+        - clang++-libc++ --version || true
+
       script:
         - env
     - os: linux
@@ -69,6 +77,13 @@ matrix:
         - ls -al /usr/local/clang-7.0.0/bin
         - echo checking c++
         - /usr/bin/c++ --version || true
+        - apt-get install -y mlocate apt-file
+        - updatedb
+        - locate clang++-libc++ || true
+        - apt-file update
+        - apt-file search clang++-libc++ || true
+        - which clang++-libc++ || true
+        - clang++-libc++ --version || true
       script:
         - env
     - os: linux
@@ -92,5 +107,12 @@ matrix:
         - ls -al /usr/local/clang-7.0.0/bin
         - echo checking c++
         - /usr/bin/c++ --version || true
+        - apt-get install -y mlocate apt-file
+        - updatedb
+        - locate clang++-libc++ || true
+        - apt-file update
+        - apt-file search clang++-libc++ || true
+        - which clang++-libc++ || true
+        - clang++-libc++ --version || true
       script:
         - env
