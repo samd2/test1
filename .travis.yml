@@ -32,6 +32,8 @@ matrix:
           packages:
             - tree
       install:
+        - python --version || true
+        - python3 --version || true
         - dpkg -l > test.txt
         - cat test.txt
         - grep ^ /etc/apt/sources.list /etc/apt/sources.list.d/*
@@ -63,6 +65,8 @@ matrix:
           packages:
             - tree
       install:
+        - python --version || true
+        - python3 --version || true
         - dpkg -l > test.txt
         - cat test.txt
         - grep ^ /etc/apt/sources.list /etc/apt/sources.list.d/*
@@ -93,6 +97,8 @@ matrix:
           packages:
             - tree
       install:
+        - python --version || true
+        - python3 --version || true
         - dpkg -l > test.txt
         - cat test.txt
         - grep ^ /etc/apt/sources.list /etc/apt/sources.list.d/*
@@ -116,3 +122,12 @@ matrix:
         - clang++-libc++ --version || true
       script:
         - env
+    - os: linux
+      dist: trusty
+      addons:
+        apt:
+          packages:
+            - tree
+      install:
+        - python --version || true
+        - python3 --version || true
