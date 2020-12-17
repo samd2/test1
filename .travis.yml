@@ -32,6 +32,7 @@ matrix:
           packages:
             - tree
       install:
+        - ruby --version || true
         - python --version || true
         - python3 --version || true
         - dpkg -l > test.txt
@@ -65,6 +66,7 @@ matrix:
           packages:
             - tree
       install:
+        - ruby --version || true
         - python --version || true
         - python3 --version || true
         - dpkg -l > test.txt
@@ -97,6 +99,7 @@ matrix:
           packages:
             - tree
       install:
+        - ruby --version || true
         - python --version || true
         - python3 --version || true
         - dpkg -l > test.txt
@@ -129,5 +132,7 @@ matrix:
           packages:
             - tree
       install:
+        - ruby --version || true
+        - which ruby
         - python --version || true
         - python3 --version || true
