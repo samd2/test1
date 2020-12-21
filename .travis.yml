@@ -32,6 +32,8 @@ matrix:
           packages:
             - tree
       install:
+        - which ccache || true
+        - which brew || true
         - ruby --version || true
         - python --version || true
         - python3 --version || true
@@ -66,6 +68,8 @@ matrix:
           packages:
             - tree
       install:
+        - which ccache || true
+        - which brew || true
         - ruby --version || true
         - python --version || true
         - python3 --version || true
@@ -99,7 +103,8 @@ matrix:
           packages:
             - tree
       install:
-        - ruby --version || true
+        - which ccache || true
+        - which brew || true
         - python --version || true
         - python3 --version || true
         - dpkg -l > test.txt
@@ -132,7 +137,10 @@ matrix:
           packages:
             - tree
       install:
+        - which ccache || true
+        - which brew || true
         - ruby --version || true
         - which ruby
         - python --version || true
         - python3 --version || true
+
