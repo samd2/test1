@@ -32,6 +32,7 @@ matrix:
           packages:
             - tree
       install:
+        - env
         - which ccache || true
         - which brew || true
         - ruby --version || true
@@ -51,8 +52,8 @@ matrix:
         - ls -al /usr/local/clang-7.0.0/bin
         - echo checking c++
         - /usr/bin/c++ --version || true
-        - apt-get install -y mlocate apt-file
-        - updatedb
+        - sudo apt-get install -y mlocate apt-file || true
+        - sudo updatedb
         - locate clang++-libc++ || true
         - apt-file update
         - apt-file search clang++-libc++ || true
@@ -68,6 +69,7 @@ matrix:
           packages:
             - tree
       install:
+        - env
         - which ccache || true
         - which brew || true
         - ruby --version || true
@@ -87,8 +89,8 @@ matrix:
         - ls -al /usr/local/clang-7.0.0/bin
         - echo checking c++
         - /usr/bin/c++ --version || true
-        - apt-get install -y mlocate apt-file
-        - updatedb
+        - sudo apt-get install -y mlocate apt-file || true
+        - sudo updatedb || true
         - locate clang++-libc++ || true
         - apt-file update
         - apt-file search clang++-libc++ || true
@@ -103,6 +105,7 @@ matrix:
           packages:
             - tree
       install:
+        - env
         - which ccache || true
         - which brew || true
         - python --version || true
@@ -121,8 +124,8 @@ matrix:
         - ls -al /usr/local/clang-7.0.0/bin
         - echo checking c++
         - /usr/bin/c++ --version || true
-        - apt-get install -y mlocate apt-file
-        - updatedb
+        - sudo apt-get install -y mlocate apt-file || true
+        - sudo updatedb || true
         - locate clang++-libc++ || true
         - apt-file update
         - apt-file search clang++-libc++ || true
@@ -140,7 +143,7 @@ matrix:
         - which ccache || true
         - which brew || true
         - ruby --version || true
-        - which ruby
+        - which ruby || true
         - python --version || true
         - python3 --version || true
 
