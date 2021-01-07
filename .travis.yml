@@ -32,14 +32,34 @@ matrix:
           packages:
             - tree
       install:
+        - env
+        - which ccache || true
+        - which brew || true
+        - ruby --version || true
+        - python --version || true
+        - python3 --version || true
         - dpkg -l > test.txt
         - cat test.txt
         - grep ^ /etc/apt/sources.list /etc/apt/sources.list.d/*
         - ls -al /usr/bin/c*
         - echo checking-clang++
+        - which clang++ || true
         - /usr/bin/clang++ --version || true
         - echo checking-clang++-libc++
+        - which clang++-libc++ || true
         - /usr/bin/clang++-libc++ --version || true
+        - echo checking /usr/local/clang-7.0.0/bin
+        - ls -al /usr/local/clang-7.0.0/bin
+        - echo checking c++
+        - /usr/bin/c++ --version || true
+        - sudo apt-get install -y mlocate apt-file || true
+        - sudo updatedb
+        - locate clang++-libc++ || true
+        - apt-file update
+        - apt-file search clang++-libc++ || true
+        - which clang++-libc++ || true
+        - clang++-libc++ --version || true
+
       script:
         - env
     - os: linux
@@ -49,14 +69,33 @@ matrix:
           packages:
             - tree
       install:
+        - env
+        - which ccache || true
+        - which brew || true
+        - ruby --version || true
+        - python --version || true
+        - python3 --version || true
         - dpkg -l > test.txt
         - cat test.txt
         - grep ^ /etc/apt/sources.list /etc/apt/sources.list.d/*
         - ls -al /usr/bin/c*
         - echo checking-clang++
+        - which clang++ || true
         - /usr/bin/clang++ --version || true
         - echo checking-clang++-libc++
+        - which clang++-libc++ || true
         - /usr/bin/clang++-libc++ --version || true
+        - echo checking /usr/local/clang-7.0.0/bin
+        - ls -al /usr/local/clang-7.0.0/bin
+        - echo checking c++
+        - /usr/bin/c++ --version || true
+        - sudo apt-get install -y mlocate apt-file || true
+        - sudo updatedb || true
+        - locate clang++-libc++ || true
+        - apt-file update
+        - apt-file search clang++-libc++ || true
+        - which clang++-libc++ || true
+        - clang++-libc++ --version || true
       script:
         - env
     - os: linux
@@ -66,13 +105,45 @@ matrix:
           packages:
             - tree
       install:
+        - env
+        - which ccache || true
+        - which brew || true
+        - python --version || true
+        - python3 --version || true
         - dpkg -l > test.txt
         - cat test.txt
         - grep ^ /etc/apt/sources.list /etc/apt/sources.list.d/*
         - ls -al /usr/bin/c*
         - echo checking-clang++
+        - which clang++ || true
         - /usr/bin/clang++ --version || true
         - echo checking-clang++-libc++
+        - which clang++-libc++ || true
         - /usr/bin/clang++-libc++ --version || true
+        - echo checking /usr/local/clang-7.0.0/bin
+        - ls -al /usr/local/clang-7.0.0/bin
+        - echo checking c++
+        - /usr/bin/c++ --version || true
+        - sudo apt-get install -y mlocate apt-file || true
+        - sudo updatedb || true
+        - locate clang++-libc++ || true
+        - apt-file update
+        - apt-file search clang++-libc++ || true
+        - which clang++-libc++ || true
+        - clang++-libc++ --version || true
       script:
         - env
+    - os: linux
+      dist: trusty
+      addons:
+        apt:
+          packages:
+            - tree
+      install:
+        - which ccache || true
+        - which brew || true
+        - ruby --version || true
+        - which ruby || true
+        - python --version || true
+        - python3 --version || true
+
